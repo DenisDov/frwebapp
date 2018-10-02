@@ -1,0 +1,51 @@
+{
+  "name": "freshbotweb",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.0.2",
+    "@material-ui/icons": "^3.0.1",
+    "axios": "^0.18.0",
+    "fontfaceobserver": "^2.0.13",
+    "polished": "^2.0.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "sanitize.css": "^7.0.3",
+    "styled-components": "^3.4.5",
+    "styled-flex-component": "^2.2.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --write \"src/*.js\"",
+    "format-code": "yarn run prettier && yarn run lint:fix",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "yarn run format-code",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "redux-devtools-extension": "^2.13.5"
+  }
+}
