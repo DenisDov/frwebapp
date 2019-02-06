@@ -1,11 +1,10 @@
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
-import { Provider } from 'react-redux';
+
 import FontFaceObserver from 'fontfaceobserver';
 
-import store from '../config/store';
 import theme from '../config/theme';
 
 import HomeScreen from './HomeScreen';
@@ -46,27 +45,23 @@ const NoMatch = ({ location }) => (
 );
 
 const App = () => (
-  <Provider store={store}>
-    <MuiThemeProvider theme={theme}>
-      <AppWrapper>
-        <Header title="Welcome to Freshbot" />
+  <MuiThemeProvider theme={theme}>
+    <AppWrapper>
+      <Header title="Welcome to Freshbot" />
 
-        <AppHolder>
-          <AppContainer>
-            <Router>
-              <Switch>
-                <Route exact path="/" component={HomeScreen} />
-                <Route path="/users" component={SandboxScreen} />
-                <Route component={NoMatch} />
-              </Switch>
-            </Router>
-          </AppContainer>
-        </AppHolder>
+      <AppHolder>
+        <AppContainer>
+          <Switch>
+            <Route exact path="/" component={HomeScreen} />
+            <Route path="/users" component={SandboxScreen} />
+            <Route component={NoMatch} />
+          </Switch>
+        </AppContainer>
+      </AppHolder>
 
-        <Footer title="Footer" />
-      </AppWrapper>
-    </MuiThemeProvider>
-  </Provider>
+      <Footer title="Footer" />
+    </AppWrapper>
+  </MuiThemeProvider>
 );
 
 export default App;
